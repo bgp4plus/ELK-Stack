@@ -1,2 +1,4 @@
-/esdata
+.gitignore
+/elasticsearch
 /.DS_Store/
+/logstash/log/mbsd_log

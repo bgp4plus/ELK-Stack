@@ -15,8 +15,8 @@ services:
     image: docker.elastic.co/logstash/logstash:7.4.1
     volumes:
       - ./logstash/pipeline:/usr/share/logstash/pipeline
-      - ./logstash/log:/var/log
-    links:
+      - ./logstash/log/mbsd_log:/var/log
+    depends_on:
       - elasticsearch
 
   kibana:
@@ -26,9 +26,8 @@ services:
     environment:
       - SERVER_NAME=kibana
       - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
-    #volumes:
-    #  - ./kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
-    links:
+      - I18N_LOCALE="ja-JP"
+    depends_on:
       - elasticsearch
 
 volumes:
