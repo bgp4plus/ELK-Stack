@@ -1,4 +1,4 @@
 .gitignore
 /elasticsearch
-/.DS_Store/
+.DS_Store
 /logstash/log/mbsd_log
